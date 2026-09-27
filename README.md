@@ -11,6 +11,12 @@ Local-first encrypted vault SDK for browser-based applications. Encrypts and sto
 - **Optional React bindings** — `useVault` hook, `VaultGate`, `VaultCreateModal`, `VaultUnlockModal`, `VaultSettings`.
 - **No server required** — all encryption happens client-side.
 
+## Security warning
+
+This vault protects your secrets at rest, but it cannot protect them from everything. In particular, XSS in your page can read the decrypted secrets (or the cached passphrase) in the browser. Before storing real secrets, read the full security model:
+
+**→ [docs/SECURITY-MODEL.md](./docs/SECURITY-MODEL.md)** — what the vault protects against, and what it does not.
+
 ## Installation
 
 ```bash
