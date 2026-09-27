@@ -1,0 +1,103 @@
+{
+  "name": "@activarium/local-secret-vault",
+  "version": "0.1.0",
+  "description": "Local-first secret vault SDK — PBKDF2 + AES-256-GCM vault lifecycle, session cache with TTL, IndexedDB storage plugin, and optional React bindings",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedricmenec/local-secret-vault.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cedricmenec/local-secret-vault/issues"
+  },
+  "homepage": "https://github.com/cedricmenec/local-secret-vault#readme",
+  "author": {
+    "name": "Cédric Menec"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/core/index.js",
+  "module": "./dist/core/index.js",
+  "types": "./dist/core/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js",
+      "default": "./dist/core/index.js"
+    },
+    "./storage/indexeddb": {
+      "types": "./dist/storage/indexeddb.d.ts",
+      "import": "./dist/storage/indexeddb.js",
+      "default": "./dist/storage/indexeddb.js"
+    },
+    "./storage/memory": {
+      "types": "./dist/storage/memory.d.ts",
+      "import": "./dist/storage/memory.js",
+      "default": "./dist/storage/memory.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "local-first",
+    "secrets",
+    "vault",
+    "encryption",
+    "webcrypto",
+    "indexeddb",
+    "react"
+  ],
+  "peerDependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "idb": "^8.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "fake-indexeddb": "^6.2.5",
+    "globals": "^17.6.0",
+    "jsdom": "^29.1.1",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^8.0.12",
+    "vite-plugin-dts": "^5.0.3",
+    "vitest": "^4.1.7"
+  },
+  "license": "MIT"
+}
