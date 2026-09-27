@@ -15,7 +15,7 @@ Local-first encrypted vault SDK for browser-based applications. Encrypts and sto
 
 This vault protects your secrets at rest, but it cannot protect them from everything. In particular, XSS in your page can read the decrypted secrets (or the cached passphrase) in the browser. Before storing real secrets, read the full security model:
 
-**→ [docs/SECURITY-MODEL.md](./docs/SECURITY-MODEL.md)** — what the vault protects against, and what it does not.
+**→ [docs/security-model.md](./docs/security-model.md)** — what the vault protects against, and what it does not.
 
 ## Installation
 

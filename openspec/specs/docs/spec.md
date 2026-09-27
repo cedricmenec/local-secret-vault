@@ -7,14 +7,14 @@ Defines the security documentation the SDK must ship: an explicit security model
 ## Requirements
 
 ### Requirement: Security model document
-The package SHALL ship a `docs/SECURITY-MODEL.md` document, written in simplified English, that describes the security properties of the vault. The document SHALL contain two explicit lists: what the vault protects against, and what it does not protect against.
+The package SHALL ship a `docs/security-model.md` document, written in simplified English, that describes the security properties of the vault. The document SHALL contain two explicit lists: what the vault protects against, and what it does not protect against.
 
 #### Scenario: Document lists protections
-- **WHEN** a reader opens `docs/SECURITY-MODEL.md`
+- **WHEN** a reader opens `docs/security-model.md`
 - **THEN** the document contains a "protects against" section covering at least: direct read of IndexedDB or a stolen browser profile while the vault is locked, recovery of the ciphertext without the passphrase, and accidental persistence of plaintext secrets
 
 #### Scenario: Document lists limitations
-- **WHEN** a reader opens `docs/SECURITY-MODEL.md`
+- **WHEN** a reader opens `docs/security-model.md`
 - **THEN** the document contains a "does not protect against" section covering at least: active XSS while the vault is unlocked, active XSS at any time while the session cache TTL is active (plaintext passphrase readable in sessionStorage), malicious browser extensions with sufficient permissions, a compromised browser or OS, keyloggers, and consumer code that logs or exfiltrates the secret after decryption
 
 #### Scenario: Document distinguishes the two XSS threats
@@ -44,9 +44,9 @@ The security model document SHALL state that `createMemoryStorage` is intended f
 - **THEN** the document states that `createMemoryStorage` is for tests/dev only
 
 ### Requirement: README security warning
-The package README SHALL contain a short security warning section that links to `docs/SECURITY-MODEL.md`.
+The package README SHALL contain a short security warning section that links to `docs/security-model.md`.
 
 #### Scenario: README links to the security model
 - **WHEN** a reader opens `README.md`
 - **THEN** a security warning section is present
-- **AND** it links to `docs/SECURITY-MODEL.md`
+- **AND** it links to `docs/security-model.md`
