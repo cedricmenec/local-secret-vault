@@ -1,0 +1,26 @@
+schema: spec-driven
+
+# Project context
+# Describes the standalone SDK published as @activarium/local-secret-vault
+# (extracted from the my-prompt-manager monorepo — this repo describes the SDK,
+# not the host app).
+context: |
+  Package: @activarium/local-secret-vault — local-first secret vault SDK.
+  Tech stack: TypeScript (strict), Vite (build + dts), Vitest (tests, jsdom +
+  fake-indexeddb), Web Crypto API (PBKDF2-SHA256 600k iterations for key
+  derivation, 1k iterations for the verify hash; AES-256-GCM encryption),
+  `idb` for IndexedDB access. React 19 is an optional peer dependency — the
+  core is framework-agnostic and importable via the `/core` subpath export.
+  Package entry points: `.`, `./core`, `./storage/indexeddb`,
+  `./storage/memory`, `./react`.
+  Conventions: named exports only; typed error classes extending `VaultError`;
+  all crypto inputs/outputs are Uint8Array (no base64/hex at the crypto layer);
+  storage backends implement the `VaultStorage` interface
+  (load/save/remove/exists); session passphrase cache lives in sessionStorage,
+  TTL config in localStorage.
+
+# Capabilities covered by specs in this repo
+capabilities:
+  - core
+  - react
+  - storage-indexeddb
